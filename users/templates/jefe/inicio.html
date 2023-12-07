@@ -1,0 +1,30 @@
+{% extends "jefe/baseT.html" %}
+
+{% load static %}
+
+{% block titulo %} Portal Pozo Catancura {% endblock %}
+
+{% block contenido %}
+
+<div class="card mb-10 mt-4 mx-auto" style="max-width: 900px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{% static 'imagenes/pozo.svg' %}" class="img-fluid rounded-start" alt="logo de pozos Catancura">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">¡Bienvenido a Pozos Catancura!</h5>
+          <p class="card-text mt-4">En Pozos Catancura, estamos comprometidos en brindarte una experiencia de trabajo excepcional. Valoramos a cada miembro de nuestro equipo y te damos la bienvenida a nuestra familia.</p>
+          <h5 class="card-title">Acerca de Nosotros</h5>
+          <p class="card-text">Pozos Catancura es una empresa con una larga trayectoria en la industria. Nuestra dedicación a la excelencia y la innovación nos ha convertido en líderes en nuestro campo. Estamos orgullosos de nuestra historia, pero siempre miramos hacia el futuro.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+

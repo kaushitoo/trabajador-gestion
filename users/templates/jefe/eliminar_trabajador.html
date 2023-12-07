@@ -1,0 +1,23 @@
+{% extends "jefe/baseT.html" %}
+
+{% block titulo %} Eliminar Trabajador {% endblock %}
+
+{% block contenido %}
+
+<br>
+<div class="card mx-auto w-75 mb-3 ">
+    <div class="card-header text-center">
+      <h3>Eliminar Trabajador</h3>
+    </div>
+    
+    <div class="card-body">
+        <p>¿Estás seguro de que deseas eliminar al trabajador "{{ trabajador.nombre_completo }}"?</p>
+        <form method="post" action="">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        </form>
+        <a href="{% url 'listaTrabajadores' %}" class="btn btn-info mt-3">No, volver</a>
+    </div>
+</div>
+
+{% endblock %}

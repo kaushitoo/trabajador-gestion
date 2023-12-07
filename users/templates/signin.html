@@ -1,0 +1,28 @@
+<!-- nombre_de_tu_template.html -->
+
+{% extends 'base.html' %} <!-- Reemplaza 'base.html' con el nombre de tu base template de Bootstrap -->
+
+{% block content %}
+<main class="form-signin w-100 m-auto">
+  <form method="post" class="container mt-5">
+    {% csrf_token %}
+
+    <h2 class="mb-4">Iniciar sesión</h2>
+
+    <div class="mb-3">
+      <label for="id_username" class="form-label">Nombre de usuario:</label>
+      {{ form.username }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_password" class="form-label">Contraseña:</label>
+      {{ form.password }}
+    </div>
+    {% if error %}
+    <div class="text-danger mb-3">{{ error }}</div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+  </form>
+</main>
+{% endblock %}

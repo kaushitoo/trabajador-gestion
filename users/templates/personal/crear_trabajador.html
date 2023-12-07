@@ -1,0 +1,24 @@
+
+{% extends "personal/baseT.html" %}
+
+{% block titulo %} Crear Nuevo Trabajador {% endblock %}
+
+{% block contenido %}
+
+<br>
+<div class="card mx-auto w-75 mb-3 ">
+    <div class="card-header text-center">
+        <h3>Crear Nuevo Trabajador</h3>
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-success">Crear Trabajador</button>
+        </form>
+        <a href="{% url 'listaTrabajadoresP' %}" class="btn btn-info mt-3">Cancelar</a>
+    </div>
+</div>
+
+{% endblock %}

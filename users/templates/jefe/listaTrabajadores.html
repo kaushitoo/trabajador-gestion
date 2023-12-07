@@ -1,0 +1,57 @@
+{% extends "jefe/baseT.html" %}
+
+{% block titulo %} Listado de Trabajadores {% endblock %}
+
+{% block contenido %}
+
+<br>
+<div class="card mx-auto w-100 mb-3 ">
+    <div class="card-header text-center">
+        <h3>Lista de Trabajadores</h3>
+    </div>
+
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Nombre Completo</th>
+                    <th class="text-center">RUN</th>
+                    <th class="text-center">Dirección</th>
+                    <th class="text-center">Teléfono</th>
+                    <th class="text-center">Fecha de Ingreso</th>
+                    <th class="text-center">Departamento</th>
+                    <th class="text-center">Cargo</th>
+                    <th class="text-center">Género</th>
+                    <th class="text-center">Acciones</th>
+                    <!-- Agrega más columnas según sea necesario -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for trabajador in trabajadores %}
+                <tr>
+                    <td class="text-center">{{ trabajador.id_usuario }}</td>
+                    <td class="text-center">{{ trabajador.nombre_completo }}</td>
+                    <td class="text-center">{{ trabajador.run }}</td>
+                    <td class="text-center">{{ trabajador.direccion }}</td>
+                    <td class="text-center">{{ trabajador.telefono }}</td>
+                    <td class="text-center">{{ trabajador.fecha_ingreso }}</td>
+                    <td class="text-center">{{ trabajador.departamentos.nombre_departamento }}</td>
+                    <td class="text-center">{{ trabajador.cargos.nombre_cargo }}</td>
+                    <td class="text-center">{{ trabajador.genero.sexo }}</td>
+                    <td>
+                        <a href="{% url 'actualizarTrabajador' trabajador.id_usuario %}" class="btn btn-warning btn-sm">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a href="{% url 'eliminarTrabajador' trabajador.id_usuario %}" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

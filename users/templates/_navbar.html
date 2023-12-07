@@ -1,0 +1,35 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      </ul>
+
+
+
+      <div class="text-end">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="/signin" class="btn btn-outline-light me-2">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="/signup" class="btn btn-warning">Register</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% if user.is_authenticated %}
+<div class="container mt-3 text-center">
+  <a href="{% url 'inicioJ' %}" class="btn btn-primary mx-2">Entrar como Jefe</a>
+  <a href="{% url 'inicioP' %}" class="btn btn-secondary mx-2">Entrar como Personal</a>
+</div>
+{% endif %}
